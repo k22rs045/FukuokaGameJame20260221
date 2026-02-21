@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Box_SK : MonoBehaviour
 {
+    [SerializeField] private string name = "";
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
