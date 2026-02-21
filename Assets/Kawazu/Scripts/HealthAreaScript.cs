@@ -16,15 +16,21 @@ public class HealthAreaScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision != null)
-        {
-            bool isDragging = collision.gameObject.GetComponent<MouseDragScript>().isDragging;
+        if (collision == null) return;
 
-            if(!isDragging)
+        MouseDragScript mouse = collision.GetComponent<MouseDragScript>();
+        PersonScript person = collision.GetComponent<PersonScript>();
+
+        if (mouse == null || person == null) return;
+
+        if (!mouse.isDragging )
+        {
+            if (person.healthType == HealthType.Sick)
             {
-                Debug.Log("aaa");
-                Destroy(collision.gameObject);
+                GManager.Instance.SavePerson(person);
             }
+            Destroy(collision.gameObject);
         }
+
     }
 }
