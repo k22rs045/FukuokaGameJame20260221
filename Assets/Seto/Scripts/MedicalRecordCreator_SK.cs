@@ -4,7 +4,7 @@ public class MedicalRecordCreator_SK : MonoBehaviour
 {
     [SerializeField] private MedicalRecord_SK   medicalRecordPrefab = null;
     [SerializeField] private Vector3            createPos           = Vector3.zero;
-    [SerializeField] private int                patientNum          = 0;
+    //[SerializeField] private int                patientNum          = 0;
     [SerializeField] private float              createIntervalTime  = 0.0f;
     
     float createTime = 0.0f;
@@ -28,7 +28,13 @@ public class MedicalRecordCreator_SK : MonoBehaviour
         if(createTime > createIntervalTime)
         {
             createTime = 0.0f;
-            Instantiate(medicalRecordPrefab, createPos, Quaternion.identity);
+            var instance = Instantiate(medicalRecordPrefab, createPos, Quaternion.identity);
+
+            // ‰¼‚Å¶¬‚·‚éƒJƒ‹ƒe‚ğİ’è
+            // TODO : ‚Ì‚¿‚É•ÏX
+            var rand = Random.Range(0, 3);
+            var medicalRecordData = new MedicalRecordData_SK("", "", rand.ToString());
+            instance.Initialize(medicalRecordData);
         }
     }
 }
