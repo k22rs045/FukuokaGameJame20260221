@@ -49,12 +49,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663a830955ea9034aab2c63b64968f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  medicalRecordData:
-    gender: 
-    grade: 
-    symptoms: 1
   speed: 5
   deletePos: {x: -12, y: 0, z: 0}
+  sickData:
+    group: 0
+    sickState: 0
+    pattern: 0
 --- !u!114 &4744575853288361276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93253c1e8fedc00428b8ea7e672191a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDragging: 0
 --- !u!50 &8986149224334495226
 Rigidbody2D:
   serializedVersion: 5
@@ -91,7 +92,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!61 &6823494767356626257

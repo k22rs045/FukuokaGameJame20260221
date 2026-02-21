@@ -2,29 +2,41 @@ using UnityEngine;
 
 public class Box_SK : MonoBehaviour
 {
-    [SerializeField] private string approach = "";
+    [SerializeField] private SickState targetState;
 
-    public string Approach
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        get
+        Debug.Log("aaaaa");
+        MedicalRecord_SK record = collision.gameObject.GetComponent<MedicalRecord_SK>();
+        if (record == null) return;
+
+        SickData data = record.sickData;
+        if (data == null) return;
+
+        if (targetState == data.sickState)
         {
-            return approach;
+            Debug.Log("ê≥â:");
+            AddScore(data);
         }
-        private set
+        else
         {
-            approach = value;
+            Debug.Log("ïsê≥âÅF" + targetState + "-" + data.sickState.ToString());
+        }
+        Destroy(collision.gameObject);
+    }
+
+    private void AddScore(SickData data)
+    {
+        if (GManager.Instance == null) return;
+
+        if (data.group == PersonGroup.Senior)
+        {
+            GManager.Instance.seniorHealthScore++;
+        }
+        else
+        {
+            GManager.Instance.juniorHealthScore++;
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

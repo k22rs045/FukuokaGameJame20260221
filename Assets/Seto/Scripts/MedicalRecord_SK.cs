@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class MedicalRecord_SK : MonoBehaviour
 {
-    [SerializeField] private MedicalRecordData_SK   medicalRecordData   = null;
+    //[SerializeField] private MedicalRecordData_SK   medicalRecordData   = null;
     [SerializeField] private float                  speed               = 0.0f;
     [SerializeField] private Vector3                deletePos           = Vector3.zero;
 
+    public SickData sickData;
     Vector3 guide_pos = Vector3.zero;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,10 +22,14 @@ public class MedicalRecord_SK : MonoBehaviour
         Delete();
     }
 
-    public void Initialize(MedicalRecordData_SK medicalRecordData)
+    public void DateSet(SickData data)
     {
-        this.medicalRecordData = medicalRecordData;
+        sickData = data;
     }
+    //public void Initialize(MedicalRecordData_SK medicalRecordData)
+    //{
+    //    this.medicalRecordData = medicalRecordData;
+    //}
 
     private void Move()
     {
@@ -40,22 +45,22 @@ public class MedicalRecord_SK : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        var box = collision.gameObject.GetComponent<Box_SK>();
-        if (box == null) { return; }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    var box = collision.gameObject.GetComponent<Box_SK>();
+    //    if (box == null) { return; }
 
-        // カルテに対応した対処を取った場合、スコアを増やしカルテを削除
-        var gudger = new SymptomsSuccessGudger_SK();
-        if (gudger.IsSucceed(box.Approach, medicalRecordData))
-        {
-            Debug.Log("対処成功");
-        }
-        else
-        {
-            Debug.Log("対処失敗");
-        }
+    //    // カルテに対応した対処を取った場合、スコアを増やしカルテを削除
+    //    var gudger = new SymptomsSuccessGudger_SK();
+    //    if (gudger.IsSucceed(box.Approach, medicalRecordData))
+    //    {
+    //        Debug.Log("対処成功");
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("対処失敗");
+    //    }
 
-        Destroy(gameObject);            
-    }
+    //    Destroy(gameObject);            
+    //}
 }
