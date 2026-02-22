@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class GymScript : MonoBehaviour
 {
@@ -8,9 +9,12 @@ public class GymScript : MonoBehaviour
 
     [SerializeField] Text timeText;
     [SerializeField] float time = 30f;
+
+    [SerializeField] AudioClip stage1BGM;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        AudioManager.instance.PlayBGM(stage1BGM);
         textPrefab.SetActive(false);
 
         timeSlider.minValue = 0f;

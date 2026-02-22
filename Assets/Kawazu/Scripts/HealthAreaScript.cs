@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class HealthAreaScript : MonoBehaviour
 {
+    [SerializeField] private AudioClip correctSE;
+    [SerializeField] private AudioClip badSE;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +31,11 @@ public class HealthAreaScript : MonoBehaviour
             if (person.healthType == HealthType.Sick)
             {
                 GManager.Instance.SavePerson(person);
+                AudioManager.instance.PlaySE(correctSE);
+            }
+            else
+            {
+                AudioManager.instance.PlaySE(badSE);
             }
             Destroy(collision.gameObject);
         }

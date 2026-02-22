@@ -1,10 +1,12 @@
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class MouseDragScript : MonoBehaviour
 {
     private Camera mainCamera;
 
     public bool isDragging = false;
+    [SerializeField] private AudioClip mouseDown;
+    [SerializeField] private AudioClip mouseUp;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +16,7 @@ public class MouseDragScript : MonoBehaviour
     private void OnMouseDown()
     {
         isDragging = true;
+        AudioManager.instance.PlaySE(mouseDown);
     }
 
     private void OnMouseDrag()
@@ -28,5 +31,6 @@ public class MouseDragScript : MonoBehaviour
     private void OnMouseUp()
     {
         isDragging = false; 
+        AudioManager.instance.PlaySE(mouseUp);
     }
 }

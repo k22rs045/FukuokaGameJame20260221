@@ -3840,7 +3840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18c905e880af1c48ad27156e2b532cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  speechBuble: {fileID: 0}
   parentA:
     parent: {fileID: 979045462}
     selectCount: 0

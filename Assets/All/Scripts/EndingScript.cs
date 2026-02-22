@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class EndingScript : MonoBehaviour
 {
-    [SerializeField] Text text;
+    [SerializeField] GameObject speechBuble;
 
     [System.Serializable]
     public class ParentGroup
@@ -18,9 +18,12 @@ public class EndingScript : MonoBehaviour
     public ParentGroup parentA;
     public ParentGroup parentB;
 
+    private Text speechText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        speechText = GetComponentInChildren<Text>();
         parentA.selectCount = GManager.Instance.seniorHealthScore;
         parentB.selectCount = GManager.Instance.juniorHealthScore;
 

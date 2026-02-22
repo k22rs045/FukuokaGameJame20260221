@@ -177,6 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDragging: 0
+  mouseDown: {fileID: 8300000, guid: 811158fffea06c34885efd940c01e9b3, type: 3}
+  mouseUp: {fileID: 8300000, guid: ed7f9b888b040a14488f43438378ffaf, type: 3}
 --- !u!114 &2037987376186496779
 MonoBehaviour:
   m_ObjectHideFlags: 0
