@@ -17,6 +17,11 @@ public class PersonScript : MonoBehaviour
     public Gender gender;
 
     public float intervalTime;
+
+    [SerializeField] private float lifeTime = 5f; // 消滅までの時間
+    private float lifeTimer = 0f;
+    private bool canDisappear = false;
+
     private float time;
 
     private SpriteRenderer spriteRenderer;
@@ -33,33 +38,58 @@ public class PersonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (healthType == HealthType.Healthy) return;
-
-        time += Time.deltaTime;
-        if (time > intervalTime)
+        // 病気進行処理
+        if (healthType == HealthType.Sick)
         {
-            ProgressSick();
-            time = 0;
+            time += Time.deltaTime;
+            if (time > intervalTime)
+            {
+                ProgressSick();
+                time = 0;
+            }
         }
+
+        // 消滅判定
+        if (ShouldDisappear())
+        {
+            lifeTimer += Time.deltaTime;
+
+            if (lifeTimer >= lifeTime)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private bool ShouldDisappear()
+    {
+        // 健康な人は常に対象
+        if (healthType == HealthType.Healthy)
+            return true;
+
+        // 病人で最終状態なら対象
+        if (pattern == ProgressPattern.PatternA && currentSick == SickState.State3)
+            return true;
+
+        if (pattern == ProgressPattern.PatternB && currentSick == SickState.State4)
+            return true;
+
+        return false;
     }
 
     private void ProgressSick()
     {
         if (pattern == ProgressPattern.PatternA)
         {
-            if (currentSick == SickState.State1)
-            {
-                currentSick = SickState.State2;
-            }  
-            else if (currentSick == SickState.State2)
+            if (currentSick == SickState.State2)
             {
                 currentSick = SickState.State3;
-            }
+            }  
                 
         }
         else if (pattern == ProgressPattern.PatternB)
         {
-            if (currentSick == SickState.State1)
+            if (currentSick == SickState.State2)
             {
                 currentSick = SickState.State4;
             }
