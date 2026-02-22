@@ -195,3 +195,4 @@ MonoBehaviour:
   pattern: 0
   gender: 0
   intervalTime: 5
+  lifeTime: 10

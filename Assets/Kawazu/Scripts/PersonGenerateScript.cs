@@ -43,7 +43,7 @@ public class PersonGenerateScript : MonoBehaviour
 
             if (person.healthType == HealthType.Sick)
             {
-                person.currentSick = SickState.State1;
+                person.currentSick = SickState.State2;
 
                 person.pattern = (Random.value < 0.5f) ? ProgressPattern.PatternA : ProgressPattern.PatternB;
             }
