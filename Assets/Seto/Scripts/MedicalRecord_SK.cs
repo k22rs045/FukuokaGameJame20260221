@@ -5,10 +5,13 @@ public class MedicalRecord_SK : MonoBehaviour
     //[SerializeField] private MedicalRecordData_SK   medicalRecordData   = null;
     [SerializeField] private float speed = 0.0f;
     [SerializeField] private Vector3 deletePos = Vector3.zero;
+    [SerializeField] private AudioClip hold = null;
+    [SerializeField] private AudioClip release = null;
 
     public SickData sickData;
     Vector3 guide_pos = Vector3.zero;
     MouseDragScript mouseDrag = null;
+    bool wasDragging = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,8 +23,11 @@ public class MedicalRecord_SK : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlaySound();
         Move();
         Delete();
+
+        wasDragging = mouseDrag.isDragging;
     }
 
     public void DateSet(SickData data)
@@ -54,22 +60,17 @@ public class MedicalRecord_SK : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    var box = collision.gameObject.GetComponent<Box_SK>();
-    //    if (box == null) { return; }
-
-    //    // カルテに対応した対処を取った場合、スコアを増やしカルテを削除
-    //    var gudger = new SymptomsSuccessGudger_SK();
-    //    if (gudger.IsSucceed(box.Approach, medicalRecordData))
-    //    {
-    //        Debug.Log("対処成功");
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("対処失敗");
-    //    }
-
-    //    Destroy(gameObject);            
-    //}
+    void PlaySound()
+    {
+        // 持つ
+        if(!wasDragging && mouseDrag.isDragging)
+        {
+            AudioManager.instance.PlaySE(hold);
+        }
+        // 離す
+        else if(wasDragging && !mouseDrag.isDragging)
+        {
+            AudioManager.instance.PlaySE(release);
+        }
+    }
 }

@@ -15,6 +15,7 @@ public class MedicalRecordCreator_SK : MonoBehaviour
     [SerializeField] private GameObject medicalRecorePrefab = null;
     [SerializeField] private Text medicalText;
     [SerializeField] private float createInterval = 3.0f;
+    [SerializeField] private AudioClip bgm = null;
 
     private float time = 0f;
     private int listIndex = 0;
@@ -22,6 +23,8 @@ public class MedicalRecordCreator_SK : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        AudioManager.instance.PlayBGM(bgm);
+
         medicalText.text = "écÇËÅF" + (GManager.Instance.personList.Count - listIndex).ToString();
     }
 
