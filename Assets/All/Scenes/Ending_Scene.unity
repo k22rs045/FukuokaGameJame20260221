@@ -3908,7 +3908,7 @@ MonoBehaviour:
     selectCount: 0
     sprite1: {fileID: -1881013900582020292, guid: 9cdeeebf18729884b84865b062e7a9a3, type: 3}
     sprite2: {fileID: 6603342130989766608, guid: 4837303d2b3ad7a45b87e4fe610d69ef, type: 3}
-  time: 7
+  time: 10
   endBGM: {fileID: 8300000, guid: f8e2242b0d321c340b4d8ed612cde2f6, type: 3}
 --- !u!4 &1409054016
 Transform:

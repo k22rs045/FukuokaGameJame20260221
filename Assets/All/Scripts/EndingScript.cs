@@ -22,9 +22,10 @@ public class EndingScript : MonoBehaviour
 
     private Text speechText;
 
-    [SerializeField] float time = 5f;
+    [SerializeField] float time;
     [SerializeField] AudioClip endBGM;
 
+    private float timer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,8 +40,8 @@ public class EndingScript : MonoBehaviour
 
     private void Update()
     {
-        time -= Time.time;
-        if (time < 0)
+        timer += Time.deltaTime;
+        if (timer > time)
         {
             SceneManager.LoadScene("Title_Scene");
         }

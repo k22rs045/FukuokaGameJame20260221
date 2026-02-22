@@ -1024,7 +1024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
       propertyPath: personList.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
       propertyPath: personList.Array.data[0].group

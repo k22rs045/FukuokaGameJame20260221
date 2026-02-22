@@ -902,6 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   titleButton: {fileID: 606234406}
+  creditButton: {fileID: 559339221}
   titleBGM: {fileID: 8300000, guid: c69af97247bc5874298f9e3fe29b269e, type: 3}
 --- !u!1 &1801369906
 GameObject:
