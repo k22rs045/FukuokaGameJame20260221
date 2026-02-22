@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MedicalRecordCreator_SK : MonoBehaviour
 {
@@ -27,7 +28,13 @@ public class MedicalRecordCreator_SK : MonoBehaviour
     void Update()
     {
         //CreateMedicalRecord();
-        if (GManager.Instance == null || listIndex >= GManager.Instance.personList.Count) return;
+        if (GManager.Instance == null) return;
+
+        if (listIndex >= GManager.Instance.personList.Count)
+        {
+            SceneManager.LoadScene("Ending_Scene");
+            return;
+        }
 
         time += Time.deltaTime;
         if (time >= generateInterval)
