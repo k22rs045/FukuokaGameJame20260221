@@ -1048,15 +1048,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
       propertyPath: personList.Array.data[0].sickState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
       propertyPath: personList.Array.data[1].sickState
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
       propertyPath: personList.Array.data[2].sickState
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6777658233465325544, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
       propertyPath: m_LocalPosition.x
