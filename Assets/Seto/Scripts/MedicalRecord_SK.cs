@@ -8,10 +8,12 @@ public class MedicalRecord_SK : MonoBehaviour
 
     public SickData sickData;
     Vector3 guide_pos = Vector3.zero;
+    MouseDragScript mouseDrag = null;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        mouseDrag = GetComponent<MouseDragScript>();
         guide_pos = transform.position;
     }
 
@@ -33,8 +35,12 @@ public class MedicalRecord_SK : MonoBehaviour
 
     private void Move()
     {
-        transform.position -= new Vector3(speed * Time.deltaTime, 0.0f, 0.0f);
-        //transform.position = guide_pos;
+        guide_pos -= new Vector3(speed * Time.deltaTime, 0f, 0f);
+
+        if (!mouseDrag.isDragging)
+        {
+            transform.position = guide_pos;
+        }
     }
 
     void Delete()
