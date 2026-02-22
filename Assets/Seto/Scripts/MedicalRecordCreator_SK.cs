@@ -11,9 +11,8 @@ public class MedicalRecordCreator_SK : MonoBehaviour
 
     //float createTime = 0.0f;
 
-    [SerializeField] private GameObject medicalRecorePrefab;
-
-    [SerializeField] private float generateInterval = 3.0f;
+    [SerializeField] private GameObject medicalRecorePrefab = null;
+    [SerializeField] private float createInterval = 3.0f;
 
     private float time = 0f;
     private int listIndex = 0;
@@ -30,14 +29,14 @@ public class MedicalRecordCreator_SK : MonoBehaviour
         //CreateMedicalRecord();
         if (GManager.Instance == null) return;
 
-        if (listIndex >= GManager.Instance.personList.Count)
-        {
-            SceneManager.LoadScene("Ending_Scene");
-            return;
-        }
+        //if (listIndex >= GManager.Instance.personList.Count)
+        //{
+        //    SceneManager.LoadScene("Ending_Scene");
+        //    return;
+        //}
 
         time += Time.deltaTime;
-        if (time >= generateInterval)
+        if (time >= createInterval)
         {
             Generate();
             time = 0f;
@@ -46,9 +45,11 @@ public class MedicalRecordCreator_SK : MonoBehaviour
 
     private void Generate()
     {
-        SickData data = GManager.Instance.personList[listIndex];
+        if(listIndex >= GManager.Instance.personList.Count) { return; }
 
+        SickData data = GManager.Instance.personList[listIndex];
         GameObject obj = Instantiate(medicalRecorePrefab, transform.position, Quaternion.identity);
+        if(obj == null) { return; }
 
         MedicalRecord_SK recordScript = obj.GetComponent<MedicalRecord_SK>();
 

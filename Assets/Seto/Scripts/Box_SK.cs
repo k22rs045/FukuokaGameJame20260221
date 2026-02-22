@@ -6,7 +6,6 @@ public class Box_SK : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("aaaaa");
         MedicalRecord_SK record = collision.gameObject.GetComponent<MedicalRecord_SK>();
         if (record == null) return;
 
@@ -22,7 +21,10 @@ public class Box_SK : MonoBehaviour
         {
             Debug.Log("ïsê≥âÅF" + targetState + "-" + data.sickState.ToString());
         }
+
         Destroy(collision.gameObject);
+        MedicalRecordDeleteCounter_SK deleteCounter = GameObject.Find("MedicalRecordDeleteCounter").GetComponent<MedicalRecordDeleteCounter_SK>();
+        deleteCounter.CountDelete();
     }
 
     private void AddScore(SickData data)
@@ -38,5 +40,4 @@ public class Box_SK : MonoBehaviour
             GManager.Instance.juniorHealthScore++;
         }
     }
-
 }
