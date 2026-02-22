@@ -2976,7 +2976,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5728\u6821\u751F2\u540D\n\u5352\u696D\u751F2\u540D\n\u3068\u3066\u3082\u5C11\u306A\u3044"
+  m_Text: 
 --- !u!222 &1126420376
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3897,7 +3897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18c905e880af1c48ad27156e2b532cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speechBuble: {fileID: 0}
+  speechBuble: {fileID: 56696412}
   parentA:
     parent: {fileID: 979045462}
     selectCount: 0
@@ -3909,6 +3909,7 @@ MonoBehaviour:
     sprite1: {fileID: -1881013900582020292, guid: 9cdeeebf18729884b84865b062e7a9a3, type: 3}
     sprite2: {fileID: 6603342130989766608, guid: 4837303d2b3ad7a45b87e4fe610d69ef, type: 3}
   time: 10
+  speechTime: 3
   endBGM: {fileID: 8300000, guid: f8e2242b0d321c340b4d8ed612cde2f6, type: 3}
 --- !u!4 &1409054016
 Transform:

@@ -22,25 +22,43 @@ public class EndingScript : MonoBehaviour
 
     private Text speechText;
 
-    [SerializeField] float time;
+    [SerializeField] float time;          // シーン遷移時間
+    [SerializeField] float speechTime;    // 吹き出し表示時間
     [SerializeField] AudioClip endBGM;
 
     private float timer;
+    private bool speechActivated = false; // 一度だけ実行するため
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         AudioManager.instance.PlayBGM(endBGM);
+
         speechText = GetComponentInChildren<Text>();
+
+        speechBuble.SetActive(false);
+
         parentA.selectCount = GManager.Instance.seniorHealthScore;
         parentB.selectCount = GManager.Instance.juniorHealthScore;
 
         SelectFromParent(parentA);
         SelectFromParent(parentB);
+
+        speechText.text = "卒業生" + parentA.selectCount + "\n" + "在校生" + parentB.selectCount; 
     }
 
-    private void Update()
+    void Update()
     {
         timer += Time.deltaTime;
+
+        // 一定秒経過で吹き出し表示
+        if (!speechActivated && timer > speechTime)
+        {
+            speechBuble.SetActive(true);
+            speechActivated = true;
+        }
+
+        // 一定秒経過でタイトルへ
         if (timer > time)
         {
             SceneManager.LoadScene("Title_Scene");
