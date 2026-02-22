@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class GymScript : MonoBehaviour
 {
     [SerializeField] GameObject textPrefab;
+    [SerializeField] Slider timeSlider;
 
     [SerializeField] Text timeText;
     [SerializeField] float time = 30f;
@@ -11,14 +12,25 @@ public class GymScript : MonoBehaviour
     void Start()
     {
         textPrefab.SetActive(false);
+
+        timeSlider.minValue = 0f;
+        timeSlider.maxValue = time;
+        timeSlider.value = time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        time -= Time.deltaTime;
-        if (time <= 0)
+        if (time > 0f)
         {
+            time -= Time.deltaTime;
+            timeSlider.value = time;
+        }
+        else
+        {
+            time = 0f;
+            timeSlider.value = 0f;
+            Debug.Log("éûä‘êÿÇÍ");
             textPrefab.SetActive(true);
         }
     }

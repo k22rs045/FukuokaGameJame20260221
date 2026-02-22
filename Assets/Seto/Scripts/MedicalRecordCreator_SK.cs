@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MedicalRecordCreator_SK : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class MedicalRecordCreator_SK : MonoBehaviour
     //float createTime = 0.0f;
 
     [SerializeField] private GameObject medicalRecorePrefab = null;
+    [SerializeField] private Text medicalText;
     [SerializeField] private float createInterval = 3.0f;
 
     private float time = 0f;
@@ -20,7 +22,7 @@ public class MedicalRecordCreator_SK : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        medicalText.text = "残り：" + (GManager.Instance.personList.Count - listIndex).ToString();
     }
 
     // Update is called once per frame
@@ -58,6 +60,8 @@ public class MedicalRecordCreator_SK : MonoBehaviour
             recordScript.DateSet(data);
         }
         listIndex++;
+
+        medicalText.text = "残り：" + (GManager.Instance.personList.Count - listIndex).ToString();
     }
 
     //void CreateMedicalRecord()
