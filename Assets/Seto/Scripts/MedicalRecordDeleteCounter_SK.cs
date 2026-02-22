@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 public class MedicalRecordDeleteCounter_SK : MonoBehaviour
 {
     int deleteNum = 0;
+    [SerializeField] private float waitTimeChangeScene = 1.0f;
+
+    float waitTime = 0.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,8 +19,10 @@ public class MedicalRecordDeleteCounter_SK : MonoBehaviour
     {
         if (deleteNum >= GManager.Instance.personList.Count)
         {
+            waitTime += Time.deltaTime;
+            if(waitTime < waitTimeChangeScene) { return; }
+
             SceneManager.LoadScene("Ending_Scene");
-            return;
         }
     }
 
