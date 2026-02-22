@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class EndingScript : MonoBehaviour
 {
@@ -20,15 +22,28 @@ public class EndingScript : MonoBehaviour
 
     private Text speechText;
 
+    [SerializeField] float time = 5f;
+    [SerializeField] AudioClip endBGM;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        AudioManager.instance.PlayBGM(endBGM);
         speechText = GetComponentInChildren<Text>();
         parentA.selectCount = GManager.Instance.seniorHealthScore;
         parentB.selectCount = GManager.Instance.juniorHealthScore;
 
         SelectFromParent(parentA);
         SelectFromParent(parentB);
+    }
+
+    private void Update()
+    {
+        time -= Time.time;
+        if (time < 0)
+        {
+            SceneManager.LoadScene("Title_Scene");
+        }
     }
 
     void SelectFromParent(ParentGroup group)

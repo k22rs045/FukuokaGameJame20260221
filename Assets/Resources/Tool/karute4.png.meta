@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d8b8c58f279dd94439a116d530924b27
+guid: 08682c7c19c0e70429170c911d4fd760
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7329917385493451166
-    second: "karute\uFF11_0"
+      213: -4244379108519227796
+    second: karute4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "karute\uFF11_0"
+      name: karute4_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 85
-        height: 112
+        x: 146
+        y: 79
+        width: 408
+        height: 543
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e911c4bc60919b560800000000000000
-      internalID: 7329917385493451166
+      spriteID: c6e4f9040bfe815c0800000000000000
+      internalID: -4244379108519227796
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "karute\uFF11_0": 7329917385493451166
+      karute4_0: -4244379108519227796
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

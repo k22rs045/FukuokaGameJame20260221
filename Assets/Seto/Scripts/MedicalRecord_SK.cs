@@ -22,15 +22,15 @@ public class MedicalRecord_SK : MonoBehaviour
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         if (sickData.sickState == SickState.State2)
         {
-            sprite.sprite = Resources.Load<Sprite>("Tool/karute1");
+            sprite.sprite = Resources.Load<Sprite>("Tool/karute2");
         }
         else if(sickData.sickState == SickState.State3)
         {
-            sprite.sprite = Resources.Load<Sprite>("Tool/karute2");
+            sprite.sprite = Resources.Load<Sprite>("Tool/karute3");
         }
         else if (sickData.sickState == SickState.State4)
         {
-            sprite.sprite = Resources.Load<Sprite>("Tool/karute3");
+            sprite.sprite = Resources.Load<Sprite>("Tool/karute4");
         }
     }
 
