@@ -8,6 +8,7 @@ TagManager:
   - PutTrigger
   - MedicalRecord
   - DedicalRecord
+  - SelectTrigger
   layers:
   - Default
   - TransparentFX

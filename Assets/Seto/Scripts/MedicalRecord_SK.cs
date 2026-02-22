@@ -3,8 +3,8 @@ using UnityEngine;
 public class MedicalRecord_SK : MonoBehaviour
 {
     //[SerializeField] private MedicalRecordData_SK   medicalRecordData   = null;
-    [SerializeField] private float                  speed               = 0.0f;
-    [SerializeField] private Vector3                deletePos           = Vector3.zero;
+    [SerializeField] private float speed = 0.0f;
+    [SerializeField] private Vector3 deletePos = Vector3.zero;
 
     public SickData sickData;
     Vector3 guide_pos = Vector3.zero;
@@ -48,6 +48,9 @@ public class MedicalRecord_SK : MonoBehaviour
         if (transform.position.x < deletePos.x)
         {
             Destroy(gameObject);
+
+            MedicalRecordDeleteCounter_SK deleteCounter = GameObject.Find("MedicalRecordDeleteCounter").GetComponent<MedicalRecordDeleteCounter_SK>();
+            deleteCounter.CountDelete();
         }
     }
 
