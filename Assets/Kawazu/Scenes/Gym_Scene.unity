@@ -638,7 +638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPrefab: {fileID: 862264488}
   timeText: {fileID: 0}
-  time: 30
+  time: 40
 --- !u!4 &1611554433
 Transform:
   m_ObjectHideFlags: 0
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   personPrefab: {fileID: 1016006377120217505, guid: 0575709f4d9259a4cbacb8110f1ec56d, type: 3}
-  generateInterval: 5
+  generateInterval: 1
   generateSize: {x: 14.98, y: 8.19}
   personSpace: 1
 --- !u!4 &1784885328
@@ -867,7 +867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 857414920856032198, guid: daf059143a26ee3409d68e14bb5731b4, type: 3}
       propertyPath: sceneName
-      value: Title_Scene
+      value: HealthRoom_Scene 2
       objectReference: {fileID: 0}
     - target: {fileID: 7396804536259219395, guid: daf059143a26ee3409d68e14bb5731b4, type: 3}
       propertyPath: m_Name
