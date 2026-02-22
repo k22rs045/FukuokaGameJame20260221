@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Box_SK : MonoBehaviour
 {
@@ -6,6 +7,9 @@ public class Box_SK : MonoBehaviour
     [SerializeField] private float EnlargeTime = 0.2f; 
     [SerializeField] private float ReduceTime = 0.4f;
     [SerializeField] private float maxScale = 1.3f;
+
+    [SerializeField] private AudioClip correct;
+    [SerializeField] private AudioClip incorrect;
 
     bool isSelecting = false;
     float scaleTime = 0.0f;
@@ -71,10 +75,12 @@ public class Box_SK : MonoBehaviour
         if (targetState == data.sickState)
         {
             Debug.Log("ê≥â:");
+            AudioManager.instance.PlaySE(correct);
             AddScore(data);
         }
         else
         {
+            AudioManager.instance.PlaySE(incorrect);
             Debug.Log("ïsê≥âÅF" + targetState + "-" + data.sickState.ToString());
         }
 
