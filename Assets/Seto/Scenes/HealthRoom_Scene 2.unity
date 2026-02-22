@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b266711502c574d9713101eca49bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetState: 0
+  targetState: 3
   EnlargeTime: 0.05
   ReduceTime: 0.2
   maxScale: 1.3
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b266711502c574d9713101eca49bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetState: 0
+  targetState: 1
   EnlargeTime: 0.05
   ReduceTime: 0.2
   maxScale: 1.3
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b266711502c574d9713101eca49bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetState: 0
+  targetState: 2
   EnlargeTime: 0.05
   ReduceTime: 0.2
   maxScale: 1.3
@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6684609662578897381, guid: 0dcee10d7fc04ab4e9a2b21746b4b833, type: 3}
+  m_Sprite: {fileID: 4293149202650929611, guid: 9b9a14304428c5c41ad61829086a9051, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
