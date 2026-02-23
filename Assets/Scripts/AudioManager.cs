@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource audioSourceBGM;
     public AudioSource audioSourceSE;
 
+    private AudioClip currentBGM;
     private void Awake()
     {
         if (instance == null)
@@ -30,17 +31,31 @@ public class AudioManager : MonoBehaviour
         audioSourceSE.volume = .5f;
     }
 
+    /// <summary>
+    /// BGMを再生します.
+    /// </summary>
+    /// <remarks>引数にAudioClipを渡してください.現在のBGMの再生を停止してから新たに再生します</remarks>
+    /// <param name="audioClip">音楽ファイル</param>
     public void PlayBGM(AudioClip audioClip)
     {
-        //Debug.Assert(audioClip);
+        if (currentBGM == audioClip) return;
+
+        currentBGM = audioClip;
+
         audioSourceBGM.Stop();
         audioSourceBGM.clip = audioClip;
         audioSourceBGM.Play();
     }
 
+    /// <summary>
+    /// SEを再生します.
+    /// </summary>
+    /// <remarks>引数にAudioClipを渡してください.</remarks>
+    /// <param name="audioClip">音楽ファイル</param>
     public void PlaySE(AudioClip audioClip)
     {
-        //Debug.Assert(audioClip);
+        Debug.Assert(audioClip);
         audioSourceSE.PlayOneShot(audioClip);
     }
+
 }

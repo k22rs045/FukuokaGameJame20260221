@@ -973,9 +973,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPrefab: {fileID: 862264488}
   timeSlider: {fileID: 616822528}
-  timeText: {fileID: 0}
-  time: 40
   stage1BGM: {fileID: 8300000, guid: 13fbc844f7a373a4897cc7dd7048522d, type: 3}
+  time: 30
 --- !u!4 &1611554433
 Transform:
   m_ObjectHideFlags: 0
@@ -1020,8 +1019,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a85945088365a43b0716d3927be858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gymScript: {fileID: 1611554432}
   personPrefab: {fileID: 1016006377120217505, guid: 0575709f4d9259a4cbacb8110f1ec56d, type: 3}
-  generateInterval: 1
   generateSize: {x: 14.7, y: 7.49}
   personSpace: 1
 --- !u!4 &1784885328

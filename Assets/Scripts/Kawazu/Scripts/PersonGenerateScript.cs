@@ -2,17 +2,27 @@ using UnityEngine;
 
 public class PersonGenerateScript : MonoBehaviour
 {
+    [SerializeField] private GymScript gymScript;
+
     [SerializeField] GameObject personPrefab;
-    [SerializeField] float generateInterval = 5f;
+    
 
     [SerializeField] Vector2 generateSize = new Vector2(10f, 10f);
     [SerializeField] float personSpace = 1.0f;
     
     private float time = 0f;
+    private float generateInterval = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         time = 0;
+
+        generateInterval = gymScript.time / 30;
+
+        for (int i = 0; i < 10; i++)
+        {
+            Generate();
+        }
     }
 
     // Update is called once per frame
@@ -29,27 +39,36 @@ public class PersonGenerateScript : MonoBehaviour
 
     private void Generate()
     {
-        Vector2 position = GetRandomPosition();
-        Collider2D hit = Physics2D.OverlapCircle(position, personSpace);
 
-        if (hit == null)
+        for (int i= 0; i < 10; i++)
         {
-            GameObject obj = Instantiate(personPrefab, position, Quaternion.identity);
-            PersonScript person = obj.GetComponent<PersonScript>();
+            Vector2 position = GetRandomPosition();
+            Collider2D hit = Physics2D.OverlapCircle(position, personSpace);
 
-            person.group = (Random.value < 0.5f) ? PersonGroup.Senior : PersonGroup.Junior;
-
-            person.healthType = (Random.value < 0.5f) ? HealthType.Healthy : HealthType.Sick;
-
-            if (person.healthType == HealthType.Sick)
+            if (hit == null)
             {
-                person.currentSick = SickState.State2;
+                GameObject obj = Instantiate(personPrefab, position, Quaternion.identity);
+                PersonScript person = obj.GetComponent<PersonScript>();
+
+                person.group = (Random.value < 0.5f) ? PersonGroup.Senior : PersonGroup.Junior;
+
+                person.healthType = (Random.value < 0.7f) ? HealthType.Sick : HealthType.Healthy;
+
+                if (person.healthType == HealthType.Healthy) return;
 
                 person.pattern = (Random.value < 0.5f) ? ProgressPattern.PatternA : ProgressPattern.PatternB;
-            }
-        }
 
-        
+                if (person.pattern == ProgressPattern.PatternA)
+                {
+                    person.currentSick = SickState.State2;
+                }
+                else
+                {
+                    person.currentSick = SickState.State1;
+                }
+                return;
+            }   
+        }
     }
 
     private Vector2 GetRandomPosition()

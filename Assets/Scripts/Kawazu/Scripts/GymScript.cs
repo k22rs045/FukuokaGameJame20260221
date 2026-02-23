@@ -5,12 +5,11 @@ using UnityEngine.Audio;
 public class GymScript : MonoBehaviour
 {
     [SerializeField] GameObject textPrefab;
-    [SerializeField] Slider timeSlider;
-
-    [SerializeField] Text timeText;
-    [SerializeField] float time = 30f;
+    [SerializeField] Slider timeSlider; 
 
     [SerializeField] AudioClip stage1BGM;
+
+    public float time = 30f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

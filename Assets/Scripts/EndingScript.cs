@@ -34,7 +34,7 @@ public class EndingScript : MonoBehaviour
     {
         AudioManager.instance.PlayBGM(endBGM);
 
-        speechText = GetComponentInChildren<Text>();
+        speechText = speechBuble.GetComponentInChildren<Text>();
 
         speechBuble.SetActive(false);
 

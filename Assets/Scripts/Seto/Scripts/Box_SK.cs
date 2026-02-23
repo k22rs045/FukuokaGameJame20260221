@@ -8,6 +8,8 @@ public class Box_SK : MonoBehaviour
     [SerializeField] private float ReduceTime = 0.4f;
     [SerializeField] private float maxScale = 1.3f;
 
+    [SerializeField] private MedicalRecordDeleteCounter_SK deleteCounter;
+
     [SerializeField] private AudioClip correct;
     [SerializeField] private AudioClip incorrect;
 
@@ -85,7 +87,6 @@ public class Box_SK : MonoBehaviour
         }
 
         Destroy(collision.gameObject);
-        MedicalRecordDeleteCounter_SK deleteCounter = GameObject.Find("MedicalRecordDeleteCounter").GetComponent<MedicalRecordDeleteCounter_SK>();
         deleteCounter.CountDelete();
 
         return true;

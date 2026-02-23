@@ -89,7 +89,7 @@ public class PersonScript : MonoBehaviour
         }
         else if (pattern == ProgressPattern.PatternB)
         {
-            if (currentSick == SickState.State2)
+            if (currentSick == SickState.State1)
             {
                 currentSick = SickState.State4;
             }
