@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Title_Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/GymTurorial_Scene.unity
+    guid: 645b3734ffb34074b81740f1082106ed
+  - enabled: 1
     path: Assets/Scenes/Gym_Scene.unity
     guid: a0714746c7241b540bdd0937a88e59a3
+  - enabled: 1
+    path: Assets/Scenes/HealthRoomTutorial_Scene.unity
+    guid: b4dec048598b9d742a4b7c7c1faeddb8
   - enabled: 1
     path: Assets/Scenes/HealthRoom_Scene.unity
     guid: a74881c4504a07741857246fb11c6e77

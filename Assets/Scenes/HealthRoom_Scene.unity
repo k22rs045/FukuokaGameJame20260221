@@ -350,7 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   medicalRecorePrefab: {fileID: 2734584479288995884, guid: 1fa293107155ef542a4e460bd0315786, type: 3}
   medicalText: {fileID: 1332388447}
-  createInterval: 3
+  createInterval: 2
   bgm: {fileID: 8300000, guid: 179a34e4bac6a1b4bb86cb0a1476371d, type: 3}
 --- !u!4 &719009321
 Transform:
@@ -1027,7 +1027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
       propertyPath: personList.Array.size
-      value: 2
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
       propertyPath: personList.Array.data[0].group
@@ -1059,7 +1059,115 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
       propertyPath: personList.Array.data[2].sickState
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[3].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[4].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[5].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[6].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[7].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[8].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[9].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[10].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[11].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[12].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[13].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[14].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[15].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[16].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[17].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[18].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[19].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[20].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[21].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[22].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[23].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[24].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[25].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[26].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[27].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[28].sickState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318628638848372507, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
+      propertyPath: personList.Array.data[29].sickState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6777658233465325544, guid: 59397c02c27951b46bc393044e9c3d87, type: 3}
       propertyPath: m_LocalPosition.x

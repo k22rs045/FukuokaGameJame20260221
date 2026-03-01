@@ -38,8 +38,8 @@ public class EndingScript : MonoBehaviour
 
         speechBuble.SetActive(false);
 
-        parentA.selectCount = GManager.Instance.seniorHealthScore;
-        parentB.selectCount = GManager.Instance.juniorHealthScore;
+        parentA.selectCount = GManager.Instance.seniorHealthScore * 2;
+        parentB.selectCount = GManager.Instance.juniorHealthScore * 2;
 
         SelectFromParent(parentA);
         SelectFromParent(parentB);

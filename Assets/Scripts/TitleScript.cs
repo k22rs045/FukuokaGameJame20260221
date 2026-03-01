@@ -27,7 +27,7 @@ public class TitleScript : MonoBehaviour
 
     private void TitleButton()
     {
-        SceneManager.LoadScene("Gym_Scene");
+        SceneManager.LoadScene("GymTurorial_Scene");
     }
     private void CreditButton()
     {

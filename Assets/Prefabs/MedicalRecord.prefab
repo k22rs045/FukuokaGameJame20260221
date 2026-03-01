@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663a830955ea9034aab2c63b64968f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 5
   deletePos: {x: -12, y: 0, z: 0}
   hold: {fileID: 8300000, guid: 811158fffea06c34885efd940c01e9b3, type: 3}
   release: {fileID: 8300000, guid: ed7f9b888b040a14488f43438378ffaf, type: 3}

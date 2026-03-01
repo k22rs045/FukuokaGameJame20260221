@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class GymScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GymScript : MonoBehaviour
     [SerializeField] AudioClip stage1BGM;
 
     public float time = 30f;
+    private bool isFinished = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +26,8 @@ public class GymScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isFinished) return;
+
         if (time > 0f)
         {
             time -= Time.deltaTime;
@@ -33,8 +37,25 @@ public class GymScript : MonoBehaviour
         {
             time = 0f;
             timeSlider.value = 0f;
-            Debug.Log("ŽžŠÔØ‚ê");
+
+            isFinished = true;
+            if (GManager.Instance.personList != null && GManager.Instance.personList.Count > 1)
+            {
+                ShuffleList(GManager.Instance.personList);
+            }
+
             textPrefab.SetActive(true);
+        }
+    }
+
+    private void ShuffleList(List<SickData> list)
+    {
+        for (int i = list.Count - 1; i > 0; i--)
+        {
+            int randomIndex = Random.Range(0, i + 1);
+            SickData temp = list[i];
+            list[i] = list[randomIndex];
+            list[randomIndex] = temp;
         }
     }
 }

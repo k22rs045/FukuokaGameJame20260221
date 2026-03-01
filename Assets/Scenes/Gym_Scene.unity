@@ -1203,7 +1203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 857414920856032198, guid: daf059143a26ee3409d68e14bb5731b4, type: 3}
       propertyPath: sceneName
-      value: HealthRoom_Scene 2
+      value: HealthRoomTutorial_Scene
       objectReference: {fileID: 0}
     - target: {fileID: 7396804536259219395, guid: daf059143a26ee3409d68e14bb5731b4, type: 3}
       propertyPath: m_Name
